@@ -3,6 +3,8 @@ interface Tarefa {
     titulo: string
     descricao?: string
     status: string
+    prioridade?: number
+    
 }
 
 type Status = "a fazer" | "fazendo" | "feito"
