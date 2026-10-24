@@ -1,3 +1,4 @@
+import { TarefaProvider } from "../../contextos/TarefaProvider"
 import Cabecalho from "../Cabecalho"
 import Principal from "../Principal"
 import Rodape from "../Rodape"
@@ -6,7 +7,9 @@ const Home = () => {
     return (
         <div className="container">
             <Cabecalho titulo="Quadro Kanban"/>
-            <Principal />
+            <TarefaProvider>
+            <Principal /> 
+            </TarefaProvider>
             <Rodape />
         </div>
     )
