@@ -1,19 +1,19 @@
 import { useState } from "react"
 import Exclamacao from "./Exclamacao"
+import useTarefas from "../../hooks/useTarefas"
 
 interface PrioridadeProps {
     id: number,
-    aoAlterar: (id:number, prioridade: number) => void
 }
 
 
-const Prioridade = ({id, aoAlterar}: PrioridadeProps) => {
+const Prioridade = ({id}: PrioridadeProps) => {
 
     const numExclamacoes = 3
     const exclamacoes = [...Array(numExclamacoes)]
     // let selecionado = false
     const [selecionado, setSelecionado] = useState(0)
-
+    const {alterarPrioridade} = useTarefas()
 
 
     return (
@@ -27,7 +27,7 @@ const Prioridade = ({id, aoAlterar}: PrioridadeProps) => {
                             return
                         }
                         setSelecionado(indice + 1)
-                        aoAlterar(id,indice + 1)
+                        alterarPrioridade(id,indice + 1)
 
                     }}
                 />
