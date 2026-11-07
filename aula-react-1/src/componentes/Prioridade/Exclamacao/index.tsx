@@ -1,17 +1,17 @@
-import { TbAlertSquareRoundedFilled } from "react-icons/tb";
+import { BsExclamationCircleFill } from "react-icons/bs";
 
 interface ExclamacaoProps {
     selecionado: boolean,
     aoSelecionar: () => void
 }
 
-
 const Exclamacao = ({ selecionado, aoSelecionar }: ExclamacaoProps) => {
+
     return (
-    <TbAlertSquareRoundedFilled 
-        color={`${selecionado ? 'red' : 'gray'}`}
-        onClick={aoSelecionar}
-    />)
+        <BsExclamationCircleFill 
+            color={`${selecionado ? 'blue' : 'gray'}`} 
+            onClick={aoSelecionar}
+        />)
 }
 
 export default Exclamacao

@@ -6,15 +6,13 @@ interface PrioridadeProps {
     id: number,
 }
 
-
-const Prioridade = ({id}: PrioridadeProps) => {
+const Prioridade = ({ id }: PrioridadeProps) => {
 
     const numExclamacoes = 3
     const exclamacoes = [...Array(numExclamacoes)]
     // let selecionado = false
     const [selecionado, setSelecionado] = useState(0)
-    const {alterarPrioridade} = useTarefas()
-
+    const { alterarPrioridade } = useTarefas()
 
     return (
         <div>
@@ -22,13 +20,12 @@ const Prioridade = ({id}: PrioridadeProps) => {
                 <Exclamacao
                     selecionado={selecionado > indice}
                     aoSelecionar={() => {
-                        if (selecionado === indice + 1) {
-                            setSelecionado(0)
-                            return
-                        }
+                        // if (selecionado === indice + 1) {
+                        //     setSelecionado(0)
+                        //     return
+                        // }
                         setSelecionado(indice + 1)
-                        alterarPrioridade(id,indice + 1)
-
+                        alterarPrioridade(id, indice + 1)
                     }}
                 />
             )

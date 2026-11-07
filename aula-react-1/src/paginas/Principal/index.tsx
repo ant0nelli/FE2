@@ -4,16 +4,14 @@ import Coluna from "../Coluna"
 
 const Principal = () => {
 
-
     return (
-        <main className="vh-100">
+        <main className="h-100">
             <div className="row">
-                <Coluna tamanho={4} titulo='a fazer'/>
-                <Coluna tamanho={4} titulo='fazendo'/>
-                <Coluna tamanho={4} titulo='feito'/>
+                <Coluna tamanho={4} titulo='a fazer' />
+                <Coluna tamanho={4} titulo='fazendo' />
+                <Coluna tamanho={4} titulo='feito' />
             </div>
         </main>
-
     )
 }
 

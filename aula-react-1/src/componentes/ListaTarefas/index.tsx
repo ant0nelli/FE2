@@ -1,8 +1,10 @@
+import { Link } from "react-router"
 import type { Tarefa } from "../../modelo/interface"
 import Prioridade from "../Prioridade"
+import style from "./style.module.css"
 
 interface ListaTarefasProps {
-    lista: Tarefa[], 
+    lista: Tarefa[],
 }
 
 const ListaTarefas = ({ lista }: ListaTarefasProps) => {
@@ -11,8 +13,9 @@ const ListaTarefas = ({ lista }: ListaTarefasProps) => {
         <ul className="list-group">
             {lista.map(tarefa => (
                 <li key={tarefa.id} className="list-group-item d-flex justify-content-between">
-                    <p className="mb-0">{tarefa.titulo}</p>
-                    <Prioridade id={tarefa.id}/>
+                    
+                    <Link className={`mb-0 ${style.link}`} to={`tarefa/${tarefa.id}`}>{tarefa.titulo}</Link>
+                    <Prioridade id={tarefa.id} />
                 </li>
             ))}
         </ul>
